@@ -1,13 +1,13 @@
 <form class="tab-pane active form-horizontal" name="postForm" novalidate ng-submit="save()" >
     <div class="form-group" >
-        <label class="control-label col-md-3">Username: <span class="required">*</span> </label>
+        <label class="control-label col-md-3">Username </label>
         <div class="col-md-4">
             <input type="text" name="username" class="form-control" ng-model="post.username" required placeholder="first name">
         </div>
     </div>
 
     <div class="form-group" ng-class="{'has-error' : submitted && postForm.title.$invalid}" >
-    	<label class="control-label col-md-3">Title <span class="required">*</span> </label>
+    	<label class="control-label col-md-3">Title </label>
     	<div class="col-md-4">
     		<input type="text" name="title" class="form-control" ng-model="post.title" ng-maxlength="30" required placeholder="Title">
     	</div>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="form-group" ng-class="{'has-error' : submitted && postForm.description.$invalid}">
-        <label class="control-label col-md-3">Description <span class="required">* </span> </label>
+        <label class="control-label col-md-3">Description </label>
         <div class="col-md-6">
             <textarea name="description" class="form-control" ng-model="post.description" ng-minlength="3" required placeholder="last name"></textarea>
         </div>

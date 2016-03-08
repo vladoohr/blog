@@ -6,4 +6,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get '/login' => 'logins#new'
+  post '/login' => 'logins#create'
+  get '/logout' => 'logins#destroy'
+
 end
