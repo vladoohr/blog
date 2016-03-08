@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
+	before_action :require_user, only: [:new, :create]
 	skip_before_action :verify_authenticity_token
 	respond_to :html, :json
+
+	def new
+	end
 
 	def create
 		@post = Post.new(post_params)

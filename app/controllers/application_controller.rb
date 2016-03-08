@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
   	if !logged_in?
-  		flash[:danger] = 'Морате да бидите најавани за да ја извршите акцијата!'
+  		flash[:danger] = 'You must be logged in to perform this action!'
   		redirect_to root_path
   	end
   end
