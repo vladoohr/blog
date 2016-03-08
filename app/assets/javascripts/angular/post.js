@@ -21,4 +21,3 @@ myApp.controller('postsCtrl', function($scope, $location, Posts){
         }
     }
 });
-
