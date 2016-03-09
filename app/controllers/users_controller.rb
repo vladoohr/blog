@@ -15,6 +15,10 @@ class UsersController < ApplicationController
 			render :new
 		end
 	end
+
+	def posts
+		@posts = current_user.posts.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
+	end
 	
 	def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation)

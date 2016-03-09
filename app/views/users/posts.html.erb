@@ -1,0 +1,14 @@
+<%= render 'shared/title', title: 'My posts' %>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<% @posts.each_with_index do |post, i| %>
+		<div class="post">		
+			<span><%= params[:page].to_i > 1 ? 5 * (params[:page].to_i - 1) + (i + 1) : (i + 1) %>.</span> <%= link_to post.title, '#' %>
+			<div class="pull-right">
+			<%= link_to 'Remove', post_path(post.id), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+			</div>
+		</div>
+		<% end %>
+		<%= will_paginate @posts%>
+	</div>
+</div>
