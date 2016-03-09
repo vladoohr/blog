@@ -1,6 +1,6 @@
 <%= render 'shared/title', title: 'Posts' %>
 <div class="row">
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-6 col-md-offset-1">
 		<% @posts.each_with_index do |post, i| %>
 		<div class="post">
 			<span><%= params[:page].to_i > 1 ? 5 * (params[:page].to_i - 1) + (i + 1) : (i + 1) %>.</span> <%= link_to post.title, '#' %>
@@ -8,5 +8,9 @@
 		</div>
 		<% end %>
 		<%= will_paginate @posts%>
+	</div>
+	<div class="col-md-4 pull-right">
+		<h3>Featured post</h3>
+		<strong><%= link_to @featured_post.title, '#' %></strong>
 	</div>
 </div>
