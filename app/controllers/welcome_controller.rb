@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-  	@posts = Post.all.order("created_at DESC")
+  	@posts = Post.all.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
   end
 end
