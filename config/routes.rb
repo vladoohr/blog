@@ -14,4 +14,11 @@ Rails.application.routes.draw do
   post '/login' => 'logins#create'
   get '/logout' => 'logins#destroy'
 
+  # api route
+  namespace :api do
+    namespace :v1 do
+      resources :posts, :only => [:index]
+    end
+  end
+
 end
