@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 	
 		if @user.save
-			flash[:success] = 'Успешно се регистриравте!'
+			flash[:success] = 'Signed in successfully!'
 			session[:user_id] = @user.id
 			redirect_to root_path # change to articles
 		else

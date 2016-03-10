@@ -9,7 +9,7 @@ class LoginsController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to root_path # change to profile
 		else
-			flash.now[:danger] = 'Внесовте погрешен емаил или лозинка!'
+			flash.now[:danger] = 'Wrong email or password!'
 			render :new
 		end
 	end

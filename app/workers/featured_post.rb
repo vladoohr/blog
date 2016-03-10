@@ -7,8 +7,10 @@ class FeaturedPost
 
   def ummark_featured_post
   	featured_post = Post.find_by(:featured => true)
-  	featured_post.featured = false
-  	featured_post.save
+    if (featured_post)
+    	featured_post.featured = false
+    	featured_post.save
+    end
   end
 
   def mark_featured_post
