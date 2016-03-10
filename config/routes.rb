@@ -21,4 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
+  # Workaround for routing error
+  match '*path', :to => 'application#routing_error', via: [:get, :post]
 end
